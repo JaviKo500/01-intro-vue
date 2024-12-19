@@ -6,7 +6,11 @@
    <title>Hello Vue</title>
 </head>
 <body>
-   <div id="my-app"></div>
+   <div id="my-app">
+      <h3>{{ message }}</h3>
+      <blockquote>Author: {{ author }}</blockquote>
+      <button v-on:click="changeMessage">Click me</button>
+   </div>
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script src="app.js"></script>
 </body>
