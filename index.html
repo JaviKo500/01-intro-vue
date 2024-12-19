@@ -10,6 +10,7 @@
       <h1>Batman quotes {{ totalQuotes }} </h1>
       <input 
          @keypress.enter="addQuote"
+         v-model="newMessage"
          type="text" name="quote" id="quote" placeholder="Add quote">
       <hr>
       <!-- <button v-on:click="showToggleAuthor">Toggle author</button> -->

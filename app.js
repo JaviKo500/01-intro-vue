@@ -14,6 +14,7 @@ const app = createApp({
       const showAuthor = ref(true);
       const quotes = ref(quotesOriginal);
       
+      const newMessage = ref('');
       const totalQuotes = computed(() => {
          return quotes.value.length;
       });
@@ -22,9 +23,11 @@ const app = createApp({
       };
 
       const addQuote = () => {
-         quotes.value.unshift({ quote: 'New quote', author: 'javiko' });
+         if (!newMessage.value.length) return;
+         quotes.value.unshift({ quote: newMessage.value, author: 'javiko' });
+         newMessage.value = '';
       };
-      return { quotes, showAuthor, totalQuotes, showToggleAuthor, addQuote };
+      return { quotes, showAuthor, totalQuotes, showToggleAuthor, addQuote, newMessage };
    }
 });
 
