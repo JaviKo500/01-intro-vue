@@ -11,8 +11,12 @@ const quotes = [
 
 const app = createApp({
    setup(){
+      const showAuthor = ref(true);
 
-      return { quotes };
+      const showToggleAuthor = () => {
+         showAuthor.value = !showAuthor.value;
+      };
+      return { quotes, showAuthor, showToggleAuthor };
    }
 });
 
